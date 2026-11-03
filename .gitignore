@@ -1,0 +1,9 @@
+local.properties
+.gradle/
+.kotlin/
+.idea/
+build/
+app/build/
+*.apk
+*.zip
+backup_wav_v0_7/
