@@ -11,10 +11,10 @@
 - v0.9.4 : renommage de l'appli en **TempoFit** (libellé, en-tête, notification, README) ; applicationId inchangé pour conserver les données. Description store : `docs/DESCRIPTION_STORE.md`.
 
 - Release signée v0.9.4 compilée et vérifiée (apksigner), testée sur émulateur API 35 ; correctif marge sous la barre d'état (Android 15). Captures : `docs/screenshots/`.
-- Publication store perso : **en attente** — l'utilisateur n'a pas encore précisé quel store (adresse / méthode d'envoi).
+- Store perso « Ruche » (https://github.com/Kamikazz60/Mon-Android-Store) : fiche TempoFit 0.9.4 ajoutée le 03/11/2026 (icône SVG, 4 captures, audit, `npm run check` OK). Procédure : `docs/AJOUTER_UNE_APP.md` du dépôt du store ; pour une mise à jour : nouvelle Release ici puis `npm run sync -- --write` dans le store.
 
 ## Dernière session
 Volume ÷2, décompte repos, préparation du dépôt GitHub (.gitignore, README). Fichiers : TrainingService.kt, MainActivity.kt, build.gradle.kts.
 
 ## Prochaine tâche exacte
-Après validation par l'utilisateur : créer le dépôt GitHub public et pousser.
+Valider à l'oreille sur téléphone (volume, tonalités, Bluetooth) ; en cas de correctif : incrémenter versionCode, `assembleRelease`, nouvelle Release GitHub, mise à jour de la fiche dans le store.
