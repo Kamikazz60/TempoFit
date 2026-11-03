@@ -14,6 +14,9 @@ Appli Android (Kotlin, Compose, Media3) : lecteur MP3 + timer d'entraînement pa
 ## Architecture
 `MainActivity.kt` (UI Compose, préférences `music_training_v5`), `TrainingService.kt` (timer, sons SoundPool, ducking via focus audio, `SIGNAL_GAIN`), `MusicService.kt` (ExoPlayer/MediaSession). Sons dans `assets/*.wav` (générés : ondes carrées 2–2,8 kHz). Logo : vecteurs dans `res/drawable`.
 
+## Signature release
+Clé hors projet : `%USERPROFILE%\.tempofit-signing\` (`tempofit-release.jks` + `keystore.properties`, jamais dans git). **À sauvegarder par l'utilisateur : sans elle, plus de mise à jour possible.** Build : `.\gradlew.bat assembleRelease -x lintVitalAnalyzeRelease -x lintVitalReportRelease -x lintVitalRelease` (le lint vital plante en interne). Émulateur : AVD `Medium_Phone_API_35` (lent au premier démarrage).
+
 ## Particularités
 - Bips en USAGE_MEDIA (sinon non diffusés sur Bluetooth).
 - Ne pas désinstaller l'ancienne version avant mise à jour (données internes) ; incrémenter versionCode à chaque APK.

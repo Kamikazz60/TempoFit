@@ -214,7 +214,7 @@ class MainActivity : ComponentActivity() {
                 ContextCompat.startForegroundService(this, intent)
             } else startService(intent)
         }
-        Column(Modifier.fillMaxSize().background(Navy)) {
+        Column(Modifier.fillMaxSize().background(Navy).statusBarsPadding()) {
             Row(Modifier.fillMaxWidth().padding(start = 19.dp, end = 12.dp, top = 12.dp, bottom = 10.dp), verticalAlignment = Alignment.CenterVertically) {
                 Image(painterResource(R.drawable.ic_launcher_foreground), contentDescription = "Logo", modifier = Modifier.size(46.dp))
                 Spacer(Modifier.width(6.dp))

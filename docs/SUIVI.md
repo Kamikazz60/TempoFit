@@ -10,6 +10,9 @@
 
 - v0.9.4 : renommage de l'appli en **TempoFit** (libellé, en-tête, notification, README) ; applicationId inchangé pour conserver les données. Description store : `docs/DESCRIPTION_STORE.md`.
 
+- Release signée v0.9.4 compilée et vérifiée (apksigner), testée sur émulateur API 35 ; correctif marge sous la barre d'état (Android 15). Captures : `docs/screenshots/`.
+- Publication store perso : **en attente** — l'utilisateur n'a pas encore précisé quel store (adresse / méthode d'envoi).
+
 ## Dernière session
 Volume ÷2, décompte repos, préparation du dépôt GitHub (.gitignore, README). Fichiers : TrainingService.kt, MainActivity.kt, build.gradle.kts.
 

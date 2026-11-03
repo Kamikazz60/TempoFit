@@ -1,4 +1,6 @@
-﻿plugins {
+import java.util.Properties
+
+plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
@@ -7,6 +9,19 @@ android {
     namespace = "com.doanh.musictraining"
     compileSdk = 35
     defaultConfig { applicationId = "com.doanh.musictraining"; minSdk = 26; targetSdk = 35; versionCode = 13; versionName = "0.9.4" }
+    // Release signing: credentials live OUTSIDE the project (%USERPROFILE%\.tempofit-signing), never in git.
+    val signingFile = file("${System.getProperty("user.home")}/.tempofit-signing/keystore.properties")
+    if (signingFile.exists()) {
+        val signing = Properties().apply { signingFile.inputStream().use { load(it) } }
+        signingConfigs.create("release") {
+            storeFile = file(signing.getProperty("storeFile"))
+            storePassword = signing.getProperty("storePassword")
+            keyAlias = signing.getProperty("keyAlias")
+            keyPassword = signing.getProperty("keyPassword")
+        }
+        buildTypes.getByName("release").signingConfig = signingConfigs.getByName("release")
+    }
+    buildTypes { release { isMinifyEnabled = false } }
     buildFeatures { compose = true }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
     kotlinOptions { jvmTarget = "17" }
